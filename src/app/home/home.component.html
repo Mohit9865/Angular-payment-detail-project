@@ -1,0 +1,135 @@
+<div class="jumbotron jumbotron-fluid bg-cover">
+  <div class="overlay"></div>
+  <div class="container" *ngIf="userDetails">
+
+
+    <div class=" text-center">
+
+      <h1><strong class="display-1">Hello, {{userDetails.FullName}}!</strong></h1>
+      <p>This application help you to store the payment details. This could help with handling large customers payment
+        details</p>
+      <mat-card-actions>
+        <button type="button" class="btn btn-primary btn-lg" (click)="getstarted()">Get Started &raquo;</button>
+
+      </mat-card-actions>
+
+
+
+
+    </div>
+  </div>
+</div>
+<mat-card>
+  <mat-card-title class=" text-center">
+    <h3><strong class="h1">Our Application Help You<i class="fas fa-arrow-alt-circle-down"></i></strong> </h3>
+  </mat-card-title>
+  <hr>
+
+  <mat-card-content>
+    <div class="container-fluid">
+
+      <mat-card>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="assets/img/hme1.jpg" width="500px" height="300px" class="img" alt="Photo of a Shiba Inu">
+          </div>
+          <div class="col-md-7">
+            <p class="textspace"><strong>Remove barriers</strong> – I stated this above. In my opinion, it is the #1
+              reason an association
+              would want to
+              offer the option to save payment information. The sole purpose of this functionality is to make the
+              checkout
+              process more simple. It seems like such a straightforward concept to get your mind around. Requiring your
+              constituents to always enter their credit card information for every online purchase with the association
+              is
+              a barrier. Removing any barriers to a purchase would be a huge win for the association – success!</p>
+          </div>
+        </div>
+      </mat-card>
+
+      <br>
+      <mat-card>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="assets/img/home2.jpg" class="img" alt="Photo of a Shiba Inu">
+          </div>
+          <div class="col-md-7">
+            <p class="textspace"><strong>Increased speed</strong> – Stored payment information gives your constituents a
+              quicker and
+              easier
+              checkout experience! What’s not to love about that? We all love quicker and easier. Think about the old
+              saying, Time is Money. Your association’s constituents value their time (don’t we all?). Having a faster
+              online checkout process will only make your constituents happier. Happier constituents will most likely
+              translate to their return to the association’s website for future purchases. </p>
+          </div>
+        </div>
+      </mat-card>
+
+      <br>
+      <mat-card>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="assets/img/home3.jpg" class="img" alt="Photo of a Shiba Inu">
+          </div>
+          <div class="col-md-7">
+            <p class="textspace"><strong>Convenience</strong> In today’s fast-paced life, we all appreciate anything
+              that becomes
+              convenient. Providing your constituents with the ability to store payment information, for an easier and
+              speedier checkout experience, is definitely a convenience. No matter how you say it, not having to pull
+              out
+              your wallet or purse to find your credit card and reenter all of the payment details (for the umpteenth
+              time) is a huge convenience. </p>
+          </div>
+        </div>
+      </mat-card>
+
+
+      <br>
+      <mat-card>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="assets/img/home4.jpg" class="img" alt="Photo of a Shiba Inu">
+          </div>
+          <div class="col-md-7">
+            <p class="textspace"><strong>Improved user experience</strong> – – Simplicity is king! Adding the ability to
+              checkout with
+              already existing stored payment information optimizes the checkout process. Having this improved user
+              experience could be the difference between a new order and an abandoned cart. Regardless of the device
+              (mobile, tablet, laptop, or desktop) your constituent is using, this improvement will make it easier for
+              them to checkout. </p>
+          </div>
+        </div>
+      </mat-card>
+
+
+      <br>
+      <mat-card>
+        <div class="row">
+          <div class="col-md-5">
+            <img src="assets/img/home5.png" class="img" alt="Photo of a Shiba Inu">
+          </div>
+          <div class="col-md-7">
+            <p class="textspace"><strong>Trusted and secure</strong> It is an accepted practice today to store your
+              payment information on
+              a
+              website you trust. I trust Amazon, so I have no problem storing my payment information for all of the
+              benefits listed here. Your constituents go to the association’s website and purchase things because you
+              are
+              trusted in their eyes. You are the industry expert for them, or the top resource for their profession.
+              Your
+              constituents will have that same trust in conjunction with saving their payment information to their
+              account
+              on the association’s website. They will know that their information is stored securely and PCI compliant.
+              You have built that trust with your constituents. </p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="text-center">
+    <mat-card-actions>
+      <button type="button" class="btn btn-primary btn-lg" (click)="getstarted()">Get Started &raquo;</button>
+    </mat-card-actions>
+  </mat-card-footer>
+
+</mat-card>

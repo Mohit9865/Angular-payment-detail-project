@@ -1,0 +1,76 @@
+<form [formGroup]="paymentForm">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-circle" ></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Card owner Name" formControlName="cardowner">
+        </div>
+        <span
+                *ngIf="paymentForm.get('cardowner').invalid && (paymentForm.get('cardowner').touched || paymentForm.get('cardowner').dirty)"
+                class="text text-danger">
+                <span *ngIf="paymentForm.get('cardowner').errors.required">Card Owner Name is required</span>
+            </span>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="far fa-credit-card" ></i>
+                </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Card Number" formControlName="cardnumber">
+        </div>
+        <span
+        *ngIf="paymentForm.get('cardnumber').invalid && (paymentForm.get('cardnumber').touched || paymentForm.get('cardnumber').dirty)"
+        class="text text-danger">
+        <span *ngIf="paymentForm.get('cardnumber').errors.required">Card Number is required</span>
+        <span *ngIf="paymentForm.get('cardnumber').errors.maxlength">16 Digit is required</span>
+        <span *ngIf="paymentForm.get('cardnumber').errors.minlength">16 Digit is required</span>
+    </span>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-7">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" placeholder="MM/YY" bsDatepicker [bsConfig]="datePickerConfig"
+                    placement="bottom" formControlName="expiredate">
+            </div>
+            <span
+                *ngIf="paymentForm.get('expiredate').invalid && (paymentForm.get('expiredate').touched || paymentForm.get('expiredate').dirty)"
+                class="text text-danger">
+                <span *ngIf="paymentForm.get('expiredate').errors.required">Date is required</span>
+            </span>
+        </div>
+
+        <div class="form-group col-md-5">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                <input type="password" class="form-control" placeholder="CVV" formControlName="cvv">
+            </div>
+            <span
+            *ngIf="paymentForm.get('cvv').invalid && (paymentForm.get('cvv').touched || paymentForm.get('cvv').dirty)"
+            class="text text-danger">
+            <span *ngIf="paymentForm.get('cvv').errors.required">CVV is required</span>
+        </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="paymentForm.invalid"
+            (click)="onsubmit()"><i class="fas fa-database"></i>Submit</button>
+    </div>
+
+</form>

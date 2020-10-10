@@ -1,0 +1,51 @@
+
+<form [formGroup]="registrationForm">
+    <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" id="Username" class="form-control" formControlName="Username">
+        <span *ngIf="f.Username.invalid && (f.Username.touched || f.Username.dirty)" class="text text-danger">
+            <span *ngIf="f.Username.errors.required">Username Is required</span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" class="form-control" id="Email" formControlName="email">
+        <span *ngIf="f.email.invalid && (f.email.touched || f.email.dirty)" class="text text-danger">
+            <span *ngIf="f.email.errors.required">Email Is required</span>
+            <span *ngIf="f.email.errors.email">Enter the Proper Email</span>
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="Name">Full Name</label>
+        <input type="text" class="form-control" id="Name" formControlName="fulname">
+        <span *ngIf="f.fulname.invalid && (f.fulname.touched || f.fulname.dirty)" class="text text-danger">
+            <span *ngIf="f.fulname.errors.required">Full Name Is required</span>
+        </span>
+    </div>
+
+    <div formGroupName="Passwords">
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" formControlName="Password">
+            <span *ngIf="registrationForm.get('Passwords.Password').invalid && (registrationForm.get('Passwords.Password').touched || registrationForm.get('Passwords.Password').dirty)" class="text text-danger">
+                <span *ngIf="registrationForm.get('Passwords.Password').errors.required">Password Is required</span>
+                <span *ngIf="registrationForm.get('Passwords.Password').errors.minLength">At Least 4 Charachter Is required</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="Confirm">Confirm Password</label>
+            <input type="password" class="form-control" id="Confirm" formControlName="ConfirmPassword">
+            <span *ngIf="registrationForm.get('Passwords.ConfirmPassword').invalid && (registrationForm.get('Passwords.ConfirmPassword').touched || registrationForm.get('Passwords.ConfirmPassword').dirty)" class="text text-danger">
+                <span *ngIf="registrationForm.get('Passwords.ConfirmPassword').errors.required">Confirm Password Is required</span>
+                <span *ngIf="registrationForm.get('Passwords.ConfirmPassword').errors.mustMatch">Passwords must match</span>
+            </span>
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+          <button type="submit" class="btn btn-lg btn-block" [disabled]="registrationForm.invalid" (click)="onSubmit()">Sign Up</button>
+        </div>
+      </div>
+</form>
+

@@ -1,0 +1,32 @@
+<mat-card>
+  <carousel>
+    <slide>
+      <img src="assets/img3.jpg" alt="first slide" style="display: block; width: 100%;">
+    </slide>
+    <!-- <slide>
+          <img src="assets/img5.jpg" alt="second slide" style="display: block; width: 100%;">
+        </slide> -->
+    <slide>
+      <img src="assets/payment.png" alt="third slide" style="display: block; width: 100%;">
+    </slide>
+  </carousel>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="jumbtron">
+        <h1 class="display-3 text-center">Payment Detail Register</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-5">
+            <app-payment-detail></app-payment-detail>
+          </div>
+          <div class="col-md-7">
+            <app-payment-details-list (passdetail)="passtoform($event)"></app-payment-details-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
