@@ -32,7 +32,8 @@ export class PaymentDetailComponent implements OnInit {
       cardowner: ['', Validators.required],
       cardnumber: ['', Validators.compose([Validators.required, Validators.maxLength(16), Validators.minLength(16)])],
       expiredate: ['', Validators.compose([Validators.required, Validators.maxLength(5), Validators.minLength(5)])],
-      cvv: ['', Validators.compose([Validators.required, Validators.maxLength(3), Validators.minLength(3)])]
+      cvv: ['', Validators.compose([Validators.required, Validators.maxLength(3), Validators.minLength(3)])],
+      phone: ['', Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(10)])]
     });
     this.resetForm();
 
@@ -42,7 +43,8 @@ export class PaymentDetailComponent implements OnInit {
       cardowner: pd.CardOwnerName,
       cardnumber: pd.CardNumber,
       expiredate: pd.ExpirationDate,
-      cvv: pd.CVV
+      cvv: pd.CVV,
+      phone:pd.PhoneNumber
     });
     this.paymentdetail = pd;
   }
@@ -54,6 +56,7 @@ export class PaymentDetailComponent implements OnInit {
       CardNumber: '',
       ExpirationDate: '',
       CVV: '',
+      PhoneNumber:''
     }
   }
 
@@ -62,6 +65,7 @@ export class PaymentDetailComponent implements OnInit {
     this.paymentdetail.CardNumber = this.paymentForm.get('cardnumber').value;
     this.paymentdetail.ExpirationDate = this.datepipe.transform(this.paymentForm.get('expiredate').value, 'MM/yy');
     this.paymentdetail.CVV = this.paymentForm.get('cvv').value;
+    this.paymentdetail.PhoneNumber = this.paymentForm.get('phone').value;
     // console.log(this.paymentdetail.ExpirationDate);
     // console.log(this.paymentForm.value);
     if (this.paymentdetail.PMID == 0) {

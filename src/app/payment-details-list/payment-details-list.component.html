@@ -8,6 +8,7 @@
       <td (click)="editdetails(pd)">{{pd.CardOwnerName | uppercase}}</td>
       <td (click)="editdetails(pd)">{{pd.CardNumber}}</td>
       <td (click)="editdetails(pd)">{{pd.ExpirationDate}}</td>
+      <td (click)="editdetails(pd)">{{pd.PhoneNumber}}</td>
       <td><i class="fas fa-trash-alt text-danger" (click)="delete(pd.PMID)"></i></td>
       <td><i class="fas fa-eye" (click)="openModal(template,pd)"></i></td>
     </tr>
@@ -30,6 +31,8 @@
     Card Number : {{modaldetail.CardNumber}}
     <hr>
     Card Expiration Date : {{modaldetail.ExpirationDate}}
+    <hr>
+    Phone Number : {{modaldetail.PhoneNumber}}
 
   </div>
 </ng-template>
