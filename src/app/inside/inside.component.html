@@ -105,16 +105,34 @@
 
     <ng-template #template>
       <div class="modal-header">
-        <h4 class="modal-title pull-left">{{userDetails.FullName | uppercase}}</h4>
+        <h4 class="modal-title pull-left"><strong class="h1">{{userDetails.FullName | uppercase}}</strong></h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       
-       Username : {{userDetails.UserName}}
-        <hr>
-       Email    : {{userDetails.Email}} 
+       <div class="container">
+         <div class="row">
+           <div class="col-sm-6">
+            Username
+           </div>
+           <div class="col-sm-6">
+            : {{userDetails.UserName}}
+          </div>
+         </div>
+         <hr>
+         <div class="row">
+          <div class="col-sm-6">
+            Email
+          </div>
+          <div class="col-sm-6">
+            : {{userDetails.Email}} 
+         </div>
+        </div>
+       </div>
+        
+        
+           
     
       </div>
     </ng-template>
