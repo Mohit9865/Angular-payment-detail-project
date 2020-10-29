@@ -18,6 +18,7 @@ export class PaymentDetailComponent implements OnInit {
   public paymentForm: FormGroup;
   paymentdetail: PaymentDetail;
   datePickerConfig: Partial<BsDatepickerConfig>;
+  loading =  false;
   constructor(private fb: FormBuilder, private paymentservice: PaymentDetailService, private toaster: ToastrService, private datepipe: DatePipe) {
     this.datePickerConfig = Object.assign({}, {
       containerClass: 'theme-dark-blue',
@@ -61,6 +62,7 @@ export class PaymentDetailComponent implements OnInit {
   }
 
   onsubmit() {
+    this.loading = true;
     this.paymentdetail.CardOwnerName = this.paymentForm.get('cardowner').value;
     this.paymentdetail.CardNumber = this.paymentForm.get('cardnumber').value;
     this.paymentdetail.ExpirationDate = this.datepipe.transform(this.paymentForm.get('expiredate').value, 'MM/yy');
@@ -77,6 +79,7 @@ export class PaymentDetailComponent implements OnInit {
           this.toaster.success('Submitted Sccessfully', 'Payment Detail Register');
           this.ngOnInit();
           this.paymentservice.refreshlisting();
+          this.loading = false;
         },
         (err) => console.log(err)
       );
@@ -88,6 +91,7 @@ export class PaymentDetailComponent implements OnInit {
         this.resetForm();
         this.ngOnInit();
         this.paymentservice.refreshlisting();
+        this.loading = false;
       },
 
         (err) => console.log(err))

@@ -35,7 +35,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 // MDB Angular Pro
-import { ButtonsModule, IconsModule, WavesModule } from 'angular-bootstrap-md'
+import { ButtonsModule, IconsModule, WavesModule } from 'angular-bootstrap-md';
+import { TooltipModule } from 'ng2-tooltip-directive';
 
 
 
@@ -75,7 +76,8 @@ import { ButtonsModule, IconsModule, WavesModule } from 'angular-bootstrap-md'
     MatCardModule,
     ButtonsModule,
      IconsModule,
-      WavesModule
+      WavesModule,
+      TooltipModule
     
   ],
   providers: [PaymentDetailService,UserService,DatePipe,{
