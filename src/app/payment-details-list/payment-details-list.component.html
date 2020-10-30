@@ -14,11 +14,11 @@
       <th scope="col">View</th>
     </tr>
   </thead>
-  <tr *ngFor="let pd of service.filteredNumber">
-    <td (click)="editdetails(pd)" tooltip="Click to Edit Detail" placement="right">{{pd.CardOwnerName | uppercase}}</td>
-    <td (click)="editdetails(pd)" tooltip="Click to Edit Detail" placement="right">{{pd.CardNumber}}</td>
-    <td (click)="editdetails(pd)" tooltip="Click to Edit Detail" placement="right">{{pd.ExpirationDate}}</td>
-    <td (click)="editdetails(pd)" tooltip="Click to Edit Detail" placement="right">{{pd.PhoneNumber}}</td>
+  <tr *ngFor="let pd of service.filteredNumber" tooltip="Click to Edit Detail" placement="left">
+    <td (click)="editdetails(pd)" >{{pd.CardOwnerName | uppercase}}</td>
+    <td (click)="editdetails(pd)" >{{pd.CardNumber}}</td>
+    <td (click)="editdetails(pd)" >{{pd.ExpirationDate}}</td>
+    <td (click)="editdetails(pd)" >{{pd.PhoneNumber}}</td>
     <td><i class="fas fa-trash-alt text-danger" (click)="delete(pd.PMID)" tooltip="Click to delete Detail"
         placement="right"></i></td>
     <td><i class="fas fa-eye" (click)="openModal(template,pd)" tooltip="Click to View Detail" placement="right"></i>

@@ -81,7 +81,7 @@ export class PaymentDetailsListComponent implements OnInit {
   delete(pd: number) {
     this.service.deleteDetail(pd).subscribe(
       (res) => {
-        this.toaster.warning('Deleted SuccessFully', 'Payment Detail Register')
+        this.toaster.info('Deleted SuccessFully', 'Payment Detail Register')
         this.ngOnInit();
         this.service.refreshlisting();
       },
